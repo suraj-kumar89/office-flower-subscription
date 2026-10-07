@@ -10,7 +10,7 @@ var KEONA = {
   whatsappNumber: "",
   hubspotPortalId: "247625054",
   hubspotFormGuid: "847051d0-fde2-4b8f-9549-be5f187938dd",
-  thankYouUrl: "/thank-you.html"
+  thankYouUrl: "/thank-you"
 };
 
 (function () {
