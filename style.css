@@ -363,3 +363,63 @@ button[disabled]{opacity:.6;cursor:default}
   .vs td svg{width:16px;height:16px;margin:3px 8px 0 0}
   .vs .k{width:52%}
 }
+
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99999;
+
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0F1938;
+  color: #B8965C;
+  border: 1px solid #B8965C;
+
+  box-shadow: 0 5px 18px rgba(15, 25, 56, 0.22);
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floating-whatsapp svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.floating-whatsapp:hover {
+  background: #B8965C;
+  color: #0F1938;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 25, 56, 0.28);
+}
+
+.floating-whatsapp:focus-visible {
+  outline: 2px solid #B8965C;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+}
