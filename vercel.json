@@ -1,5 +1,16 @@
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/office-flower-subscription",
+      "destination": "https://office-flower-subscription.vercel.app/"
+    },
+    {
+      "source": "/office-flower-subscription/:path*",
+      "destination": "https://office-flower-subscription.vercel.app/:path*"
+    }
+  ]
 }

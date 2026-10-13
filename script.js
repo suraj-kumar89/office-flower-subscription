@@ -18,7 +18,7 @@ var KEONA = {
 
   whatsappNumber: "",
 
-  thankYouUrl: "/thank-you"
+  thankYouUrl: "/office-flower-subscription/thank-you"
 
 };
 
