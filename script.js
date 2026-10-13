@@ -345,18 +345,21 @@ var KEONA = {
       };
 
 
-function finish() {
-  window.dataLayer = window.dataLayer || [];
+      function finish() {
+        console.log("finish() called");
+        console.log("Current URL:", window.location.href);
+        console.log("Configured thank-you URL:", KEONA.thankYouUrl);
 
-  window.dataLayer.push({
-    event: "office_flower_subscription_lead",
-    form_used: source,
-    frequency: data.frequency,
-    whole_year: data.wholeYear
-  });
-console.log("Thank-you URL:", KEONA.thankYouUrl);
-  window.location.assign(KEONA.thankYouUrl);
-}
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "office_flower_subscription_lead",
+          form_used: source,
+          frequency: data.frequency,
+          whole_year: data.wholeYear
+        });
+
+        window.location.href = KEONA.thankYouUrl;
+      }
 
 
       function fail(text) {
