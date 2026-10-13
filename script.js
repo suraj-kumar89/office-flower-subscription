@@ -34,11 +34,11 @@ var KEONA = {
 
   var FREQ = {
 
-    weekly:      { label: "every week",      weeks: [1, 1, 1, 1], note: "4 visits a month" },
+    weekly: { label: "every week", weeks: [1, 1, 1, 1], note: "4 visits a month" },
 
     fortnightly: { label: "every two weeks", weeks: [1, 0, 1, 0], note: "2 visits a month" },
 
-    monthly:     { label: "once a month",    weeks: [1, 0, 0, 0], note: "1 visit a month" }
+    monthly: { label: "once a month", weeks: [1, 0, 0, 0], note: "1 visit a month" }
 
   };
 
@@ -249,7 +249,7 @@ var KEONA = {
 
     });
 
-  } catch (e) {}
+  } catch (e) { }
 
 
 
@@ -263,7 +263,7 @@ var KEONA = {
 
     company: function (v) { return v.trim().length > 1; },
 
-   email: function (v) {
+    email: function (v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
     },
 
@@ -344,29 +344,21 @@ var KEONA = {
         website: f.website ? f.website.value : ""
       };
 
-      function finish() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "office_flower_subscription_lead",
-          form_used: source,
-          frequency: data.frequency,
-          whole_year: data.wholeYear
-        });
-       window.location.assign(
-  "https://www.keonagifting.com/office-flower-subscription/thank-you"
-);
-return;
-        if (done) {
-          var doneText = $(".done-text", done);
-          if (doneText) doneText.textContent = "Thank you, " + data.name.split(" ")[0] + ". We have your request and will get back to you on " + data.phone + " with a quote.";
-          form.hidden = true;
-          done.hidden = false;
-          done.focus();
-        } else {
-          show("success", "Thank you! Your quote request has been submitted.");
-          if (btn) btn.disabled = false;
-        }
-      }
+function finish() {
+  window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    event: "office_flower_subscription_lead",
+    form_used: source,
+    frequency: data.frequency,
+    whole_year: data.wholeYear
+  });
+
+  window.location.assign(
+    "https://www.keonagifting.com/office-flower-subscription/thank-you"
+  );
+}
+
 
       function fail(text) {
         show("warn", text);
@@ -393,7 +385,7 @@ return;
           body: JSON.stringify(data)
         });
         var dbResult = {};
-        try { dbResult = await dbResponse.json(); } catch (_) {}
+        try { dbResult = await dbResponse.json(); } catch (_) { }
         if (!dbResponse.ok || !dbResult.success) {
           throw new Error(dbResult.error || "Your request could not be saved. Please try again.");
         }
