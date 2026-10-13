@@ -354,9 +354,10 @@ function finish() {
     whole_year: data.wholeYear
   });
 
-  window.location.assign(
-    "https://www.keonagifting.com/office-flower-subscription/thank-you"
-  );
+  window.location.href =
+    "/office-flower-subscription/thank-you?source=flower";
+
+  return;
 }
 
 
