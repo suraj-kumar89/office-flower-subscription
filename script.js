@@ -338,6 +338,7 @@ var KEONA = {
         frequency: selectedFrequency ? selectedFrequency.value : "weekly",
         wholeYear: !!(f.year && f.year.checked),
         formUsed: source,
+
         page: location.href,
         tracking: TRACK,
         website: f.website ? f.website.value : ""
@@ -351,10 +352,10 @@ var KEONA = {
           frequency: data.frequency,
           whole_year: data.wholeYear
         });
-        if (KEONA.thankYouUrl) {
-          location.href = KEONA.thankYouUrl;
-          return;
-        }
+       window.location.assign(
+  "https://www.keonagifting.com/office-flower-subscription/thank-you"
+);
+return;
         if (done) {
           var doneText = $(".done-text", done);
           if (doneText) doneText.textContent = "Thank you, " + data.name.split(" ")[0] + ". We have your request and will get back to you on " + data.phone + " with a quote.";
