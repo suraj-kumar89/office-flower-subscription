@@ -18,7 +18,7 @@ var KEONA = {
 
   whatsappNumber: "",
 
-  thankYouUrl: "/office-flower-subscription/thank-you"
+  thankYouUrl: "/office-flower-subscription/thank_you"
 
 };
 
@@ -344,6 +344,7 @@ var KEONA = {
         website: f.website ? f.website.value : ""
       };
 
+
 function finish() {
   window.dataLayer = window.dataLayer || [];
 
@@ -354,10 +355,9 @@ function finish() {
     whole_year: data.wholeYear
   });
 
-  window.location.href =
-    "/office-flower-subscription/thank-you?source=flower";
-
-  return;
+  window.location.replace(
+    "https://www.keonagifting.com/office-flower-subscription/thank_you"
+  );
 }
 
 
