@@ -14,7 +14,7 @@ module.exports = async function handler(req, res) {
   }
 
   const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SECRET_KEY;  if (!supabaseUrl || !serviceRoleKey) {
+const serviceRoleKey = process.env.SUPABASE_SECRET_KEY;  if (!supabaseUrl || !serviceRoleKey) {
     console.error("Missing Supabase environment variables");
     return res.status(500).json({ error: "Server configuration error. Please try again later." });
   }
