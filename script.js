@@ -386,7 +386,7 @@ var KEONA = {
 
       try {
         // 1) Save the lead to Supabase through the secure Vercel API.
-        var dbResponse = await fetch("/api/quote", {
+        var dbResponse = await fetch("/office-flower-subscription/api/quote", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
