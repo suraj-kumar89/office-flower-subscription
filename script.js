@@ -354,7 +354,7 @@ function finish() {
     frequency: data.frequency,
     whole_year: data.wholeYear
   });
-
+console.log("Thank-you URL:", KEONA.thankYouUrl);
   window.location.assign(KEONA.thankYouUrl);
 }
 
